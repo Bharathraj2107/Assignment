@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas project</title>
+</head>
+<body>
+    <hr>
+
+    <canvas id="myCanvascircle" width="700" height="200" style="border:5px solid green;"></canvas>
+    
+    <script>
+        let canvas=document.getElementById("myCanvascircle").getContext("2d");
+        canvas.fillStyle="red"
+
+        canvas.fillRect(680,10,30,80)//x axsix,y axis,width,height
+        canvas.arc(100,150,60,0,2*Math.PI)//x axis,y axis,radius,0 bcoz no starting and ending 
+        canvas.arc(600,150,60,0,2*Math.PI)
+        canvas.fill();
+        
+    </script>
+</body>
+</html>
