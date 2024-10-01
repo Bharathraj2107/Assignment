@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+    <style>
+        body {
+            background-color: rgb(39, 37, 37);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="10000" height="10000"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Grey rectangle at the bottom (horizontally long)
+        ctx.fillStyle = "grey";
+        ctx.fillRect(0, 600, 10000, 70); // fillRect(x, y, width, height)
+
+        // Vertical grey rectangle on the left
+        ctx.fillRect(60, 90, 20, 510);
+
+        // Black rectangle on the left
+        ctx.fillStyle = "black";
+        ctx.fillRect(40, 0, 70, 320);
+
+        // Red circle at the top (left)
+        ctx.fillStyle = "red";
+        ctx.beginPath();
+        ctx.arc(75, 55, 40, 0, 2 * Math.PI); // arc(x, y, radius, startAngle, endAngle)
+        ctx.fill();
+
+        // Yellow circle in the middle (left)
+        ctx.fillStyle = "yellow";
+        ctx.beginPath();
+        ctx.arc(75, 155, 40, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Green circle at the bottom (left)
+        ctx.fillStyle = "green";
+        ctx.beginPath();
+        ctx.arc(75, 250, 40, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Large yellow circle (middle)
+        ctx.fillStyle = "yellow";
+        ctx.beginPath();
+        ctx.arc(235, 155, 100, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Smaller black circle inside the yellow circle
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(270, 150, 80, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Pink rectangle in the middle bottom
+        ctx.fillStyle = "pink";
+        ctx.fillRect(180, 370, 480, 170);
+
+        // Small black square on the pink rectangle
+        ctx.fillStyle = "black";
+        ctx.fillRect(179, 425, 30, 30);
+
+        // Yellow circle inside the small black square
+        ctx.fillStyle = "yellow";
+        ctx.beginPath();
+        ctx.arc(180, 442, 15, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Big circle near the bottom with a smaller white circle inside it
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(270, 540, 60, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(270, 540, 20, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Pink rectangle in the middle (top area)
+        ctx.fillStyle = "pink";
+        ctx.fillRect(360, 170, 300, 200);
+
+        // Large purple rectangle with four smaller purple rectangles inside it
+        ctx.fillStyle = "purple";
+        ctx.fillRect(655, 170, 620, 370);
+
+        // White rectangle on top of the pink one
+        ctx.fillStyle = "white";
+        ctx.fillRect(420, 199, 200, 120);
+
+        // Small purple rectangles with pink stroke (border)
+        ctx.strokeStyle = "pink";
+        ctx.lineWidth = 9;
+        ctx.fillStyle = "purple";
+
+        ctx.strokeRect(680, 199, 120, 210); // strokeRect(x, y, width, height)
+        ctx.strokeRect(840, 199, 120, 210);
+        ctx.strokeRect(990, 199, 120, 210);
+        ctx.strokeRect(1140, 199, 120, 210);
+
+        // Big purple circle with a smaller white circle inside it (left)
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(750, 540, 60, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(750, 540, 20, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Another big purple circle with a smaller white circle inside it (right)
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(1170, 540, 60, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(1170, 540, 20, 0, 2 * Math.PI);
+        ctx.fill();
+    </script>
+</body>
+</html>

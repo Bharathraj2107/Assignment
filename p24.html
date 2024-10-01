@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Version</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // White rectangle with black stroke (main rectangle)
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.fillRect(200, 120, 600, 400);  // x=200, y=120, width=600, height=400
+        ctx.strokeRect(200, 120, 600, 400);  // x=200, y=120, width=600, height=400
+
+        // Smaller white rectangle with black stroke
+        ctx.lineWidth = 6;
+        ctx.fillRect(290, 320, 200, 60);  // x=290, y=320, width=200, height=60
+        ctx.strokeRect(290, 320, 200, 60);  // Same dimensions but stroke is drawn
+
+        // Line
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(470, 180);  // Starting point (x1=470, y1=180)
+        ctx.lineTo(410, 190);  // Ending point (x2=410, y2=190)
+        ctx.stroke();  // Draw the line
+
+    </script>
+</body>
+</html>

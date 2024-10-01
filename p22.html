@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Face</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // White rectangle (background of the face)
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.fillRect(200, 120, 400, 460);
+        ctx.strokeRect(200, 120, 400, 460);
+
+        // Light yellow face circles
+        ctx.fillStyle = "lightyellow";
+        ctx.beginPath();
+        ctx.arc(410, 330, 90, 0, 2 * Math.PI); // top part of the face
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.arc(410, 480, 110, 0, 2 * Math.PI); // bottom part of the face
+        ctx.fill();
+
+        // Black circle at the bottom (like a mouth or other detail)
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(410, 500, 70, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Outer white circles for the eyes
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(340, 240, 40, 0, 2 * Math.PI); // left eye
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(480, 240, 40, 0, 2 * Math.PI); // right eye
+        ctx.fill();
+
+        // Inner white circles inside the eyes
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(340, 240, 20, 0, 2 * Math.PI); // left inner eye
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(480, 240, 20, 0, 2 * Math.PI); // right inner eye
+        ctx.fill();
+
+        // Main eyes (black and white circles)
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(370, 310, 20, 0, 2 * Math.PI); // left eye outer circle
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(440, 310, 20, 0, 2 * Math.PI); // right eye outer circle
+        ctx.fill();
+
+        // White circles inside the eyes (highlights)
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(370, 310, 10, 0, 2 * Math.PI); // left eye highlight
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(440, 310, 10, 0, 2 * Math.PI); // right eye highlight
+        ctx.fill();
+
+        // Pupils (small black circles)
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(370, 310, 5, 0, 2 * Math.PI); // left pupil
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(440, 310, 5, 0, 2 * Math.PI); // right pupil
+        ctx.fill();
+
+        // Nose structure
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(405, 370, 38, 0, 2 * Math.PI); // outer nose circle
+        ctx.fill();
+
+        // Inner nose circle
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(405, 370, 28, 0, 2 * Math.PI); // inner nose circle
+        ctx.fill();
+
+        // Yellow rectangle for the nose base
+        ctx.fillStyle = "lightyellow";
+        ctx.fillRect(350, 327, 120, 50);
+
+        // Small black circle on the nose (center)
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(405, 340, 15, 0, 2 * Math.PI); // nose tip
+        ctx.fill();
+    </script>
+</body>
+</html>

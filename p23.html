@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Conversion</title>
+    <style>
+        body {
+            background-color: rgb(48, 38, 58);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="1200" height="1000"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // White rectangle with black stroke (main background rectangle)
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.fillRect(100, 160, 1107, 420);  // x=100, y=160, width=1107, height=420
+        ctx.strokeRect(100, 160, 1107, 420);
+
+        // Dark rectangle near the bottom (platform)
+        ctx.fillStyle = "black";
+        ctx.fillRect(10, 640, 1900, 100); // x=10, y=640, width=1900, height=100
+
+        // Pink rectangle (overlay on the main background)
+        ctx.fillStyle = "pink";
+        ctx.fillRect(100, 160, 1106, 200); // x=100, y=160, width=1106, height=200
+
+        // Multiple white rectangles with pink stroke (bordered boxes)
+        ctx.strokeStyle = "pink";
+        ctx.lineWidth = 15;
+
+        for (let x = 106; x <= 1100; x += 100) {
+            ctx.strokeRect(x, 160, 100, 100); // Creates the bordered squares in a row
+            if (x === 106) {
+                ctx.strokeRect(x, 160, 200, 100); // First rectangle is larger (width=200)
+            }
+            if (x >= 310) {
+                ctx.fillStyle = "white";
+                ctx.fillRect(x, 160, 100, 100); // Filling the smaller squares with white
+            }
+        }
+
+        // White circles near the top
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(60, 60, 50, 0, 2 * Math.PI); // First circle
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(40, 90, 50, 0, 2 * Math.PI); // Second circle
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(120, 90, 50, 0, 2 * Math.PI); // Third circle
+        ctx.fill();
+
+        // Tall vertical rectangle on the right side
+        ctx.fillStyle = "black";
+        ctx.fillRect(1400, 120, 50, 520); // x=1400, y=120, width=50, height=520
+
+        // Red circle with white stroke
+        ctx.fillStyle = "red";
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(1420, 68, 50, 0, 2 * Math.PI); // Red circle (cx=1420, cy=68, r=50)
+        ctx.fill();
+        ctx.stroke();
+
+        // Two large white-bordered circles at the bottom
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 4;
+
+        // Left large circle
+        ctx.beginPath();
+        ctx.arc(240, 560, 90, 0, 2 * Math.PI); // Large circle
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(240, 560, 48, 0, 2 * Math.PI); // Inner circle
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(240, 560, 20, 0, 2 * Math.PI); // Small inner circle with black stroke
+        ctx.fill();
+        ctx.stroke();
+
+        // Right large circle
+        ctx.beginPath();
+        ctx.arc(1040, 560, 90, 0, 2 * Math.PI); // Large circle
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(1040, 560, 48, 0, 2 * Math.PI); // Inner circle
+        ctx.fillStyle = "white";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(1040, 560, 20, 0, 2 * Math.PI); // Small inner circle with black stroke
+        ctx.fill();
+        ctx.stroke();
+
+    </script>
+</body>
+</html>

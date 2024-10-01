@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Equivalent</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Outer white rectangle with black border
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 4;
+        ctx.fillRect(100, 40, 440, 800); // fillRect(x, y, width, height)
+        ctx.strokeRect(100, 40, 440, 800); // strokeRect(x, y, width, height)
+
+        // Small black rectangle at the top
+        ctx.fillStyle = "black";
+        ctx.fillRect(250, 55, 80, 20);
+
+        // Grey rectangles (first row)
+        ctx.fillStyle = "grey";
+        ctx.fillRect(130, 155, 70, 60);
+        ctx.fillRect(230, 155, 70, 60);
+        ctx.fillRect(330, 155, 70, 60);
+        ctx.fillRect(430, 155, 70, 60);
+
+        // Grey rectangles (second row)
+        ctx.fillRect(130, 255, 70, 60);
+        ctx.fillRect(230, 255, 70, 60);
+        ctx.fillRect(330, 255, 70, 60);
+        ctx.fillRect(430, 255, 70, 60);
+
+        // Grey rectangles (third row)
+        ctx.fillRect(130, 355, 70, 60);
+        ctx.fillRect(230, 355, 70, 60);
+        ctx.fillRect(330, 355, 70, 60);
+        ctx.fillRect(430, 355, 70, 60);
+
+        // DarkBlue rectangles with purple circles (fourth row)
+        ctx.fillStyle = "DarkBlue";
+        ctx.fillRect(130, 455, 70, 60);
+        ctx.fillRect(230, 455, 70, 60);
+
+        // Purple circles in the DarkBlue rectangles
+        ctx.fillStyle = "purple";
+        ctx.beginPath();
+        ctx.arc(195, 445, 10, 0, 2 * Math.PI); // arc(cx, cy, radius, startAngle, endAngle)
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(295, 445, 10, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Grey rectangles (fourth row, continuation)
+        ctx.fillStyle = "grey";
+        ctx.fillRect(330, 455, 70, 60);
+        ctx.fillRect(430, 455, 70, 60);
+
+        // Grey rectangles and DarkBlue with red circle (fifth row)
+        ctx.fillRect(130, 555, 70, 60);
+        ctx.fillStyle = "DarkBlue";
+        ctx.fillRect(230, 555, 70, 60);
+
+        // Red circle in the DarkBlue rectangle
+        ctx.fillStyle = "red";
+        ctx.beginPath();
+        ctx.arc(297, 545, 10, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Grey rectangles (fifth row, continuation)
+        ctx.fillStyle = "grey";
+        ctx.fillRect(330, 555, 70, 60);
+        ctx.fillRect(430, 555, 70, 60);
+
+        // DarkBlue rectangle with purple circle and grey rectangles (sixth row)
+        ctx.fillStyle = "DarkBlue";
+        ctx.fillRect(130, 655, 70, 60);
+
+        // Purple circle in the DarkBlue rectangle
+        ctx.fillStyle = "purple";
+        ctx.beginPath();
+        ctx.arc(192, 646, 10, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Grey rectangles (sixth row, continuation)
+        ctx.fillStyle = "grey";
+        ctx.fillRect(230, 655, 70, 60);
+        ctx.fillRect(330, 655, 70, 60);
+        ctx.fillRect(430, 655, 70, 60);
+
+    </script>
+</body>
+</html>

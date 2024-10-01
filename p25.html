@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Version</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Main rectangle (400x400) with a black stroke
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.fillRect(0, 0, 400, 400); // x=0, y=0, width=400, height=400
+        ctx.strokeRect(0, 0, 400, 400); // Draw the border
+
+        // Pink circle (r=90, centered at cx=180, cy=98)
+        ctx.beginPath();
+        ctx.arc(180, 98, 90, 0, 2 * Math.PI); // cx=180, cy=98, r=90
+        ctx.fillStyle = "pink";
+        ctx.fill();
+        ctx.strokeStyle = "dimgrey";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // First white circle (r=40, centered at cx=130, cy=98)
+        ctx.beginPath();
+        ctx.arc(130, 98, 40, 0, 2 * Math.PI); // cx=130, cy=98, r=40
+        ctx.fillStyle = "white";
+       
